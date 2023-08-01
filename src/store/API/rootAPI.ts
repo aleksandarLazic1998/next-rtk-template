@@ -8,7 +8,7 @@ const rootApi = createApi({
     if (action.type === HYDRATE) return action.payload[reducerPath];
   },
   baseQuery: fetchBaseQuery({
-    baseUrl: '/',
+    baseUrl: process.env.NEXT_PUBLIC_API_ROUTE,
     prepareHeaders: (headers) => {
       headers.append('Content-Type', 'application/json');
       return headers;
