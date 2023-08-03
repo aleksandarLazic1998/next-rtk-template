@@ -1,0 +1,14 @@
+.sidebar {
+  width: 100px;
+  height: 100%;
+  background: red;
+
+  &--open {
+    width: 350px;
+  }
+
+  &__nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+}

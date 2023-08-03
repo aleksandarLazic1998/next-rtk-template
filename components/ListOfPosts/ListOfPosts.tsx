@@ -1,6 +1,7 @@
 'use client';
 import { useAppSelector } from '@/hooks/redux';
 import { useGetPostsQuery } from '@/src/store/API/services/PostsApiSlice';
+import Link from 'next/link';
 
 export const ListOfPosts = () => {
   useGetPostsQuery({});
@@ -8,10 +9,14 @@ export const ListOfPosts = () => {
   const { list: posts } = useAppSelector((state) => state.posts.posts);
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       {posts.length > 0 ? (
         posts.map((post) => {
-          return <div key={post.id}>{post.title}</div>;
+          return (
+            <Link href={`/posts/${post.id}`} key={post.id}>
+              {post.title}
+            </Link>
+          );
         })
       ) : (
         <>No Posts</>

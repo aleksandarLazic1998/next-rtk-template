@@ -5,6 +5,6 @@ import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 
 function Home() {
-  return <main>Aleksandar Lazicc</main>;
+  return <main>Some Content</main>;
 }
 export default Home;
