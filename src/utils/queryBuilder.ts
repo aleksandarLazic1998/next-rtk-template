@@ -1,6 +1,6 @@
 interface IProps {
   baseQuery: string;
-  queryObject: { [key: string]: string | number } | null;
+  queryObject?: { [key: string]: string | number } | null;
 }
 
 export const queryBuilder = ({ baseQuery, queryObject }: IProps) => {
