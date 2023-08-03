@@ -3,7 +3,7 @@ import makeStore from '@/src/store/store';
 import { StoreInstance } from '@/src/utils/storeInstance';
 import Image from 'next/image';
 
-export default function PostsPage() {
+export default async function PostsPage() {
   return (
     <main>
       <ListOfPosts />
