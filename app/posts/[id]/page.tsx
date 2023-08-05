@@ -22,4 +22,6 @@ async function SinglePost({ params }: { params: { id: string } }) {
   );
 }
 
+console.log(1);
+
 export default SinglePost;
