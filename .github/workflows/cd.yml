@@ -34,12 +34,9 @@ jobs:
 
 
 name: Auto Set .env
-on: [push] # Trigger the workflow on push events (e.g., commits to the main branch)
+push:  # Replace with the event that triggers the workflow
     branches:
-      - main
-  # pull_request:  # Trigger the workflow on pull request events
-  #   branches:
-  #     - main 
+      - main  # Replace with your desired branch name
 
 jobs:
   set_env:
