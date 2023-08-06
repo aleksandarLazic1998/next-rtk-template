@@ -1,7 +1,6 @@
 name: Manual Continuous Integration and Environment Setup
 
-on:
-  workflow_dispatch: # Manually trigger the workflow
+on: workflow_dispatch # Manually trigger the workflow
 
 jobs:
   set_env_and_lint:
