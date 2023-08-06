@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   applicationName: 'Next ReduxToolkit Template',
   creator: 'Aleksandar Lazic',
   icons: { icon: ['/favicon.ico?v=1'], apple: ['/apple-touch-icon.png?v=1'] },
-  manifest: '/site.webmanifest',
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
