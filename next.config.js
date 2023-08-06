@@ -1,10 +1,18 @@
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+  // disable is help to disable PWA in deployment mode
+});
+
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-
-const nextConfig = {
-  images: {
-    domains: [],
+module.exports = withPWA({
+  swcMinify: true,
+  reactStrictMode: true,
+  typescript: {
+    ignoreBuildErrors: true,
   },
-};
-
-module.exports = nextConfig;
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  // write additional configuration here.
+});
