@@ -1,4 +1,4 @@
--name: Auto Set .env
+name: Auto Set .env
 on: [push] # Trigger the workflow on push events (e.g., commits to the main branch)
     branches:
       - main
