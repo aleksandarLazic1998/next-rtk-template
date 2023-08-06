@@ -1,6 +1,6 @@
 'use client';
 import { useAppSelector } from '@/hooks/redux';
-import { useGetPostsQuery } from '@/src/store/API/services/PostsApiSlice';
+import { useGetPostsQuery } from '@/src/store/API/RTKServices/PostsApiSlice';
 import Link from 'next/link';
 
 export const ListOfPosts = () => {

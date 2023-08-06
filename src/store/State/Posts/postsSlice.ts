@@ -1,7 +1,7 @@
 import IPosts from '@/typescript/interfaces/IPosts';
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { postsApiSlice } from '../../API/services/PostsApiSlice';
+import { postsApiSlice } from '../../API/RTKServices/PostsApiSlice';
 
 interface IState {
   posts: { list: IPosts[] };
