@@ -26,18 +26,17 @@ jobs:
           echo "SECRET_API_KEY=${SECRET_API_KEY}" >> .env
           echo "SECRET_APP_KEY=${SECRET_APP_KEY}" >> .env
 
-      - name:  Install dependencies
-          uses: borales/actions-yarn@v4
-          with:
-            cmd: install # will run `yarn install` command
+      - name: Install dependencies
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command
 
       - name: Build production bundle
-          uses: borales/actions-yarn@v4
-          with:
-            cmd: build # will run `yarn build` command
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build # will run `yarn build` command
 
       - name: Run Linter
-          uses: borales/actions-yarn@v4
-          with:
-            cmd: lint # will run `yarn lint` command           
-
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: lint # will run `yarn lint` command
