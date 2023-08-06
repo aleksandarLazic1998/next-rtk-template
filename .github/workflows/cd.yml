@@ -31,3 +31,28 @@ jobs:
           cmd: lint # will run `yarn lint` command
       # - name: Run Testing
       #   run: npm run test
+
+
+name: Auto Set .env
+on: [push] # Trigger the workflow on push events (e.g., commits to the main branch)
+    branches:
+      - main
+  # pull_request:  # Trigger the workflow on pull request events
+  #   branches:
+  #     - main 
+
+jobs:
+  set_env:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set environment variables
+        env:
+          SECRET_API_KEY: ${{ secrets.API_ROUTE }}
+          SECRET_APP_KEY: ${{ secrets.API_ROUTE }}
+        run: |
+          echo "SECRET_KEY=${SECRET_API_KEY}" > .env
+          echo "ANOTHER_SECRET=${SECRET_APP_KEY}" >> .env
