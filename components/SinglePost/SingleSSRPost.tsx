@@ -1,13 +1,12 @@
+import httpClient from '@/src/utils/httpClient';
 import IPost from '@/typescript/interfaces/IPost';
-import 'server-only';
 
 const getSinglePostData = async (id: string): Promise<IPost> => {
-  const response = await fetch(
+  const response = await httpClient.get(
     `${process.env.NEXT_PUBLIC_API_ROUTE}/posts/${id}`,
   );
-  const data: IPost = await response.json();
 
-  return data;
+  return response.data;
 };
 
 export async function SingleSSRPost({ id }: { id: string }) {
