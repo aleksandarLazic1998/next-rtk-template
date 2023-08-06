@@ -4,6 +4,7 @@ import '@/sass/main.scss';
 import { Provider } from 'react-redux';
 import { ReactNode } from 'react';
 import { LayoutComponent } from '../LayoutComponents/LayoutComponent';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className}>
+        <Analytics />
         <LayoutComponent>{children}</LayoutComponent>
       </body>
     </html>
