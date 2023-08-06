@@ -1,50 +1,23 @@
-name: Continuos integration
+name: Continuous Integration and Environment Setup
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  eslint:
-    name: Lint code
+  set_env_and_lint:
+    name: Set Environment and Lint Code
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Set Node.js 18.x
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-
-      - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
-
-      - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build # will run `yarn build` command
-
-      - name: Run Linter
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: lint # will run `yarn lint` command
-      # - name: Run Testing
-      #   run: npm run test
-
-
-name: Auto Set .env
-push:  # Replace with the event that triggers the workflow
-    branches:
-      - main  # Replace with your desired branch name
-
-jobs:
-  set_env:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
 
       - name: Set environment variables
         env:
@@ -53,3 +26,12 @@ jobs:
         run: |
           echo "SECRET_KEY=${SECRET_API_KEY}" > .env
           echo "ANOTHER_SECRET=${SECRET_APP_KEY}" >> .env
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build production bundle
+        run: yarn build
+
+      - name: Run Linter
+        run: yarn lint
