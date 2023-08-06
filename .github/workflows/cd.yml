@@ -26,8 +26,3 @@ jobs:
 
       # - name: Run Testing
       #   run: npm run test
-
-on:
-  push:  # Replace with the event that triggers the workflow
-    branches:
-      - main  # Replace with your desired branch name
