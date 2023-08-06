@@ -27,10 +27,16 @@ jobs:
           echo "SECRET_APP_KEY=${SECRET_APP_KEY}" >> .env
 
       - name: Install dependencies
-        run: yarn install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command
 
       - name: Build production bundle
-        run: yarn build
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build # will run `yarn build` command
 
       - name: Run Linter
-        run: yarn lint
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: lint # will run `yarn lint` command
