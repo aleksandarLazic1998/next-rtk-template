@@ -1,16 +1,7 @@
 import { SingleCSRPost } from '@/components/SinglePost/SingleCSRPost';
 import { SingleSSRPost } from '@/components/SinglePost/SingleSSRPost';
+import httpClient from '@/src/utils/httpClient';
 import IPost from '@/typescript/interfaces/IPost';
-import 'server-only';
-
-const getSinglePostData = async (id: string): Promise<IPost> => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_ROUTE}/posts/${id}`,
-  );
-  const data: IPost = await response.json();
-
-  return data;
-};
 
 async function SinglePost({ params }: { params: { id: string } }) {
   return (
