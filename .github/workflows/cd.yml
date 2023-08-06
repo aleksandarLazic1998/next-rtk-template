@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - main
-
-on: workflow_dispatch
+  workflow_dispatch: # Manually trigger the workflow
 
 jobs:
   set_env_and_lint:
