@@ -10,14 +10,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
-
-      - name: Cache dependencies
-        uses: actions/cache@v3
+      - name: Set Node.js 18.x
+        uses: actions/setup-node@v3
         with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}-lint
-          restore-keys: npm-
+          node-version: 18.x
+
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build:prod # will run `yarn build:prod` command
 
       - name: Install Packages
         run: npm ci
