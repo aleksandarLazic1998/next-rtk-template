@@ -12,6 +12,19 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Next RTK Template',
   description: 'Template for generating Next.js projects with RTK and RTKQuery',
+  keywords: [
+    'next.js',
+    'ReduxToolkit',
+    'RTKQuery',
+    'Axios',
+    'TypeScript',
+    'Redux',
+    'Template',
+  ],
+  applicationName: 'Next ReduxToolkit Template',
+  creator: 'Aleksandar Lazic',
+  icons: { icon: ['/favicon.ico?v=1'], apple: ['/apple-touch-icon.png?v=1'] },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
