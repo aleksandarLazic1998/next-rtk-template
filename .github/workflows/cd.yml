@@ -23,10 +23,11 @@ jobs:
       - name: Build production bundle
         uses: borales/actions-yarn@v4
         with:
-          cmd: build # will run `yarn build:prod` command
+          cmd: build # will run `yarn build` command
 
       - name: Run Linter
-        run: npm run lint
-
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: lint # will run `yarn lint` command
       # - name: Run Testing
       #   run: npm run test
