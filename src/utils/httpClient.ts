@@ -22,7 +22,7 @@ httpClient.interceptors.response.use(
 
       if (typeof window !== 'undefined') {
         localStorage.clear();
-        window.location.replace(`${process.env.NEXT_PUBLIC_APP_ROUTE}/login`);
+        window.location.replace(`${window.location.origin}/login`);
       }
     } else throw error;
   },

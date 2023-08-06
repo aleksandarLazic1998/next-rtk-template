@@ -26,7 +26,7 @@ jobs:
         run: |
           echo "SECRET_API_KEY=${SECRET_API_KEY}"
           echo "SECRET_APP_KEY=${SECRET_APP_KEY}"
-          echo "SECRET_API_KEY=${SECRET_API_KEY}" > .env
+          echo "SECRET_API_KEY=${SECRET_API_KEY}" >> .env
           echo "SECRET_APP_KEY=${SECRET_APP_KEY}" >> .env
 
       - name: Install dependencies
