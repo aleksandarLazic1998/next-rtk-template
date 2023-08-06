@@ -3,6 +3,7 @@ import { PrivateLayoutComponent } from './PrivateLayoutComponent';
 import { ReactNode } from 'react';
 import { ReduxProvider } from '@/features/Providers/ReduxProvider';
 import { Message } from '@/components/Message/Message';
+import ThemeRegistry from './ThemeRegistry';
 
 interface IProps {
   children: ReactNode;
@@ -17,11 +18,12 @@ export const LayoutComponent = ({ children }: IProps) => {
   return (
     <>
       <Message />
-
       {tokenValue ? (
         <PublicLayoutComponent>
           <div className="main-component__section">
-            <ReduxProvider>{children}</ReduxProvider>
+            <ReduxProvider>
+              <ThemeRegistry options={{ key: 'mui' }}>{children}</ThemeRegistry>
+            </ReduxProvider>
           </div>
         </PublicLayoutComponent>
       ) : (

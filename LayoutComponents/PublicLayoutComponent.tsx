@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import { ReduxProvider } from '../features/Providers/ReduxProvider';
 import { Sidebar } from '@/components/Sidebar/Sidebar';
-import { Navbar } from '@/components/Navbar/Navbar';
 
 import './PublicLayoutComponent.scss';
+import Navbar from '@/components/Navbar/Navbar';
 
 interface IProps {
   children: ReactNode;
@@ -12,7 +12,7 @@ interface IProps {
 export const PublicLayoutComponent = ({ children }: IProps) => {
   return (
     <div className="app-layout">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className="main-component">
         <Navbar />
         {children}

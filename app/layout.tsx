@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { ReactNode } from 'react';
 import { LayoutComponent } from '../LayoutComponents/LayoutComponent';
 import { Analytics } from '@vercel/analytics/react';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
