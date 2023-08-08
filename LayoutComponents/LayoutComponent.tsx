@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import { ReduxProvider } from '@/features/Providers/ReduxProvider';
 import { Message } from '@/components/Message/Message';
 import ThemeRegistry from './ThemeRegistry';
+import dynamic from 'next/dynamic';
 
 interface IProps {
   children: ReactNode;
