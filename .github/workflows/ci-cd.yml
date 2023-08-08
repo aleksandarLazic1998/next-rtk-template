@@ -35,14 +35,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Create .env file
-        uses: SpicyPizza/create-envfile@v2.0.2
-        with:
-          envkey_DEBUG: false
-          envkey_SOME_API_KEY: '123456abcdef'
-          envkey_SECRET_API_KEY: ${{ secrets.API_ROUTE }}
-          envkey_SECRET_APP_KEY: ${{ secrets.APP_ROUTE }}
-          some_other_variable: foobar
-          file_name: .env.local
-          fail_on_empty: false
-          sort_keys: false
+      - name: Set Environment Variables
+        run: |
+          echo "MY_SECRET_KEY_API=${{ secrets.API_ROUTE }}" >> .env.local
+          echo "MY_SECRET_KEY_APP=${{ secrets.APP_ROUTE }}" >> .env.local
+
+      - name: Display Environment Variables
+        run: |
+          cat .env.local
