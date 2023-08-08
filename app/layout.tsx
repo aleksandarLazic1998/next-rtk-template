@@ -6,6 +6,8 @@ import { ReactNode } from 'react';
 import { LayoutComponent } from '../LayoutComponents/LayoutComponent';
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
+import { LayoutHead } from '@/components/LayoutHead/LayoutHead';
+import registerServiceWorker from '@/src/utils/registerServiceWorkers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,8 +32,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
+      <LayoutHead />
       <body className={inter.className}>
-        <Analytics />
+        {/* <Analytics /> */}
         <LayoutComponent>{children}</LayoutComponent>
       </body>
     </html>
