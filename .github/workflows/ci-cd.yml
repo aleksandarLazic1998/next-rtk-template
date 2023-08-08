@@ -37,8 +37,7 @@ jobs:
     steps:
       - name: Set Environment Variables
         run: |
-          echo "MY_SECRET_KEY_API=${{ secrets.API_ROUTE }}" >> .env.local
-          echo "MY_SECRET_KEY_APP=${{ secrets.APP_ROUTE }}" >> .env.local
+          echo "NEXT_PUBLIC_API_ROUTE=${{ secrets.API_ROUTE }}" >> .env.local
 
       - name: Display Environment Variables
         run: |
