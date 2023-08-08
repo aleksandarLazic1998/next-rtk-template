@@ -43,7 +43,7 @@ jobs:
           envkey_DEBUG: false
           envkey_SOME_API_KEY: '123456abcdef'
           envkey_SECRET_API_KEY: ${{ secrets.API_ROUTE }}
-          envkey_SECRET_APP_KEY: ${{ secrets.APp_ROUTE }}
+          envkey_SECRET_APP_KEY: ${{ secrets.APP_ROUTE }}
           some_other_variable: foobar
           file_name: .env.local
           fail_on_empty: false
