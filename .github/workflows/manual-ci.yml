@@ -16,16 +16,6 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Set environment variables
-        env:
-          SECRET_API_KEY: ${{ secrets.API_ROUTE }}
-          SECRET_APP_KEY: ${{ secrets.APP_ROUTE }}
-        run: |
-          echo "SECRET_API_KEY=${SECRET_API_KEY}"
-          echo "SECRET_APP_KEY=${SECRET_APP_KEY}"
-          echo "SECRET_API_KEY=${SECRET_API_KEY}" >> .env
-          echo "SECRET_APP_KEY=${SECRET_APP_KEY}" >> .env
-
       - name: Install dependencies
         uses: borales/actions-yarn@v4
         with:
