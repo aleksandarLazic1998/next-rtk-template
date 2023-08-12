@@ -9,6 +9,7 @@ export const queryBuilder = ({ baseQuery, queryObject }: IProps) => {
   if (queryObject) {
     Object.entries(queryObject).forEach((queryItem) => {
       const [key, value] = queryItem;
+      if (!key) return;
       query.searchParams.append(key, String(value));
     });
   }
