@@ -3,8 +3,8 @@ import { PrivateLayoutComponent } from './PrivateLayoutComponent';
 import { ReactNode } from 'react';
 import { ReduxProvider } from '@/features/Providers/ReduxProvider';
 import { Message } from '@/components/Message/Message';
-import ThemeRegistry from './ThemeRegistry';
 import dynamic from 'next/dynamic';
+import MuiThemeProvider from './MuiThemeProvider';
 
 interface IProps {
   children: ReactNode;
@@ -17,21 +17,19 @@ export const LayoutComponent = ({ children }: IProps) => {
   const tokenValue = true;
 
   return (
-    <>
-      <Message />
-      {tokenValue ? (
-        <PublicLayoutComponent>
-          <div className="main-component__section">
-            <ReduxProvider>
-              <ThemeRegistry options={{ key: 'mui' }}>{children}</ThemeRegistry>
-            </ReduxProvider>
-          </div>
-        </PublicLayoutComponent>
-      ) : (
-        <PrivateLayoutComponent token={token}>
-          {children}
-        </PrivateLayoutComponent>
-      )}
-    </>
+    <ReduxProvider>
+      <MuiThemeProvider>
+        <Message />
+        {tokenValue ? (
+          <PublicLayoutComponent>
+            <div className="main-component__section">{children}</div>
+          </PublicLayoutComponent>
+        ) : (
+          <PrivateLayoutComponent token={token}>
+            {children}
+          </PrivateLayoutComponent>
+        )}
+      </MuiThemeProvider>
+    </ReduxProvider>
   );
 };
