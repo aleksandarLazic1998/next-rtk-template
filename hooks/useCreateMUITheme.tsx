@@ -22,7 +22,7 @@ const useCreateMUITheme = () => {
     [prefersDarkMode],
   );
 
-  return theme;
+  return Object.freeze(theme);
 };
 
 export default useCreateMUITheme;
