@@ -30,15 +30,3 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: lint # will run `yarn lint` command
-
-  create-envfile:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Set Environment Variables
-        run: |
-          echo "NEXT_PUBLIC_API_ROUTE=${{ secrets.API_ROUTE }}" >> .env.local
-
-      - name: Display Environment Variables
-        run: |
-          cat .env.local

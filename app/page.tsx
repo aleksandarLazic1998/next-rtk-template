@@ -1,4 +1,3 @@
-'use client';
 import Link from 'next/link';
 import fetch from 'node-fetch';
 import { AppProps } from 'next/app';
