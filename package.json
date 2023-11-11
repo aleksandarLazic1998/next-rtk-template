@@ -18,7 +18,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.4.5",
     "abort-controller": "^3.0.0",
-    "axios": "^1.4.0",
+    "axios": "^1.6.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "global": "^4.4.0",
